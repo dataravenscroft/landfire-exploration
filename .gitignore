@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — raw rasters are large; commit only metadata
+data/raw/**/*.tif
+data/raw/**/*.TIF
+data/raw/**/*.tif.ovr
+data/raw/**/*.zip
+data/raw/**/*.ZIP
+data/raw/**/*.dbf
+data/raw/**/*.GeoJSON
+data/raw/**/*.tfw
+data/raw/**/*.xml
+data/raw/**/*.shp
+data/raw/**/*.shx
+data/raw/**/*.prj
+data/raw/**/*.txt
+data/raw/*.zip
+data/raw/*.ZIP
+data/processed/
+
+# ERA5 downloaded files
+*.nc
+*.grib
+
+# Model outputs — keep results JSON, ignore large objects
+*.pkl
+*.joblib
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# CDS credentials (contain API key — never commit)
+.cdsapirc
+
+# pyenv
+.python-version
+notebooks/cache/

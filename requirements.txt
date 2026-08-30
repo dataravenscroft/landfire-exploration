@@ -1,0 +1,40 @@
+# Core scientific Python
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+
+# Geospatial raster tools
+xarray>=2023.6
+rioxarray>=0.15
+rasterio>=1.3
+pyproj>=3.6
+shapely>=2.0
+geopandas>=0.14
+
+# DEM / terrain access (USGS 3DEP)
+py3dep>=0.16
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+
+# Machine learning
+scikit-learn>=1.3
+
+# ERA5 weather access (Copernicus Climate Data Store)
+# Requires a free account at https://cds.climate.copernicus.eu
+cdsapi>=0.6
+
+# Cloud / remote file access (ERA5 via zarr/GCS — optional)
+zarr>=2.16
+gcsfs>=2023.6
+fsspec>=2023.6
+
+# HTTP and utilities
+requests>=2.31
+tqdm>=4.65
+
+# Notebooks
+notebook>=7.0
+ipykernel>=6.0
+ipywidgets>=8.0
