@@ -1,6 +1,6 @@
 # LANDFIRE Vegetation and Fuel Exploration
 
-I've done two previous geospatial classification projects — a Landsat-based forest cover classifier for northeastern Minnesota, and a CNN trained on Sentinel-2 imagery ([sentinel-vegetation-cnn](https://github.com/dataravenscroft/sentinel-vegetation-cnn)). This project moves into fire ecology: using LANDFIRE's multi-layer vegetation and fuel data to ask how much of LANDFIRE's expert fuel model assignments can be recovered from vegetation inputs alone, and what the errors reveal about where that approach breaks down.
+ This project focuses on fire ecology: using LANDFIRE's multi-layer vegetation and fuel data to ask how much of LANDFIRE's expert fuel model assignments can be recovered from vegetation inputs alone, and what the errors reveal about where that approach breaks down.
 
 I used Claude Code to generate most of this codebase. I'm not going to pretend I wrote every line. I'm working through it now — reading the design decisions, making changes where things don't make sense to me — and that's the actual work in progress.
 
