@@ -442,9 +442,9 @@ def plot_disturbance_effect(
     df: pd.DataFrame,
     figures_dir: Optional[Path] = None,
 ) -> plt.Figure:
-    """Show how disturbance shifts the fuel model group distribution."""
+    """For each fuel group, show what % of its cells have recorded disturbance."""
     df_plot = df.dropna(subset=["fuel_model", "disturbance"]).copy()
-    df_plot["fuel_group"]  = df_plot["fuel_model"].apply(
+    df_plot["fuel_group"] = df_plot["fuel_model"].apply(
         lambda c: fbfm40_group(int(c)) if not np.isnan(c) else "Unknown"
     )
     df_plot["disturbed"] = df_plot["disturbance"] > 0
@@ -452,28 +452,25 @@ def plot_disturbance_effect(
     groups = [g for g in FBFM40_GROUP_COLORS if g in df_plot["fuel_group"].unique()]
     palette = {g: FBFM40_GROUP_COLORS[g] for g in groups}
 
-    undist = df_plot[~df_plot["disturbed"]]["fuel_group"].value_counts(normalize=True)
-    dist   = df_plot[df_plot["disturbed"]]["fuel_group"].value_counts(normalize=True)
+    dist_rate = (
+        df_plot.groupby("fuel_group")["disturbed"]
+        .mean()
+        .reindex(groups)
+        .fillna(0) * 100
+    )
 
-    x = np.arange(len(groups))
-    w = 0.38
     fig, ax = plt.subplots(figsize=(11, 5))
-    bars_u = ax.bar(x - w/2, [undist.get(g, 0) * 100 for g in groups],
-                    w, label="Undisturbed", color=[palette[g] for g in groups],
-                    alpha=0.9, edgecolor="white")
-    bars_d = ax.bar(x + w/2, [dist.get(g, 0) * 100 for g in groups],
-                    w, label="Recently disturbed", color=[palette[g] for g in groups],
-                    alpha=0.45, edgecolor=[palette[g] for g in groups],
-                    linewidth=1.5)
+    ax.bar(groups, dist_rate.values,
+           color=[palette[g] for g in groups],
+           edgecolor="white", alpha=0.9)
 
-    ax.set_xticks(x)
-    ax.set_xticklabels(groups, rotation=30, ha="right", fontsize=9)
-    ax.set_ylabel("% of cells in group")
+    ax.set_ylabel("% of cells with recorded disturbance")
+    ax.set_xlabel("Fuel model group (current classification)")
     ax.set_title(
-        "Fuel Model Group Distribution: Undisturbed vs. Recently Disturbed Cells",
+        "Disturbance Rate by Fuel Model Group",
         fontsize=11, fontweight="bold",
     )
-    ax.legend()
+    ax.set_xticklabels(groups, rotation=30, ha="right", fontsize=9)
     ax.yaxis.grid(True, alpha=0.3)
     ax.set_axisbelow(True)
     fig.tight_layout()
