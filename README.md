@@ -78,9 +78,11 @@ The disturbance layer records the most recent disturbance event (fire, harvest, 
 
 ## Study area
 
-**Northern Colorado Mountain Landscape** | (−105.80°W, 40.30°N) to (−105.35°W, 40.65°N) | ~36 × 39 km | ~1,600–3,800 m elevation
+**Central Colorado Mountain Landscape** | (−105.63°W, 38.43°N) to (−105.35°W, 38.64°N) | ~26 × 23 km | ~1,600–3,800 m elevation
 
-This area spans lower-montane ponderosa pine and shrubland through montane mixed conifer and subalpine spruce-fir into alpine tundra. It overlaps the eastern perimeter of the **2020 Cameron Peak Fire** (311,000 acres — Colorado's largest recorded wildfire as of 2020), making disturbance effects on fuel model assignment clearly visible in the data.
+The study area spans the Royal Gorge / Cañon City foothills east into the Wet Mountains and Sangre de Cristo front. Vegetation zones move from lower-montane ponderosa pine woodland and Gambel oak shrubland at lower elevations through mixed conifer (Douglas-fir, white fir) at mid-elevation. This is a montane landscape — not alpine — and the vegetation-to-fuel gradient reflects that range.
+
+The LANDFIRE disturbance layer captures bark beetle mortality and historical fire events that have altered fuel structure across the range, and disturbed cells drive some of the most visible fuel model variation in the data.
 
 ---
 
