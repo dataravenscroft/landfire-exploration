@@ -2,7 +2,7 @@
 
  This project focuses on fire ecology: using LANDFIRE's multi-layer vegetation and fuel data to ask how much of LANDFIRE's expert fuel model assignments can be recovered from vegetation inputs alone, and what the errors reveal about where that approach breaks down.
 
-I used Claude Code to generate most of this codebase. I'm not going to pretend I wrote every line. I'm working through it now — reading the design decisions, making changes where things don't make sense to me — so in that sense it is very much an exploration in progress.
+I used Claude Code to generate much of this codebase. I’m not going to pretend I wrote every line; this is very much an exploration and a work in progress. My focus has been on understanding the design decisions, interrogating the code and assumptions, and making changes where something doesn’t make sense to me or where further investigation is warranted.
 
 Built on LANDFIRE LF2024 raster data, USGS 3DEP elevation, and ERA5 atmospheric reanalysis.
 
